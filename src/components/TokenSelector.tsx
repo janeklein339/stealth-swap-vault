@@ -119,7 +119,7 @@ export function TokenSelector({
           <Button
             variant="ghost"
             size="sm"
-            className="h-auto p-0 text-xs text-accent hover:text-accent-foreground"
+            className="h-auto p-0 text-xs text-white hover:text-gray-200"
             onClick={() => onAmountChange(selected.balance || "0")}
           >
             MAX

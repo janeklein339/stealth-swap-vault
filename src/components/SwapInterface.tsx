@@ -73,7 +73,7 @@ export function SwapInterface() {
       <Card className="glass-card border-border/50 p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-xl font-bold text-white">
             Cross-Chain Swap
           </h2>
           <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export function SwapInterface() {
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Bridge Fee</span>
-              <span className="text-accent font-medium">0.1%</span>
+              <span className="text-white font-medium">0.1%</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Estimated Time</span>
@@ -155,7 +155,7 @@ export function SwapInterface() {
         {/* Swap Status */}
         {swapStatus === 'pending' && (
           <div className="glass-card rounded-lg p-4 text-center bg-contrast-safe">
-            <div className="flex items-center justify-center gap-2 text-accent">
+            <div className="flex items-center justify-center gap-2 text-white">
               <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
               <span className="text-contrast-high">Processing swap...</span>
             </div>

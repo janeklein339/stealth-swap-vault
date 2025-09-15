@@ -31,9 +31,9 @@ export function PrivacyIndicator({ isEncrypted, onToggle }: PrivacyIndicatorProp
 export function MEVProtectionBadge() {
   return (
     <div className="flex items-center gap-2 glass-card rounded-lg px-3 py-2">
-      <Shield className="h-4 w-4 text-accent" />
-      <span className="text-sm font-medium text-accent">MEV Protected</span>
-      <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+      <Shield className="h-4 w-4 text-white" />
+      <span className="text-sm font-medium text-white">MEV Protected</span>
+      <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
     </div>
   );
 }

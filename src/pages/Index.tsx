@@ -41,7 +41,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mb-8">
             <img src={privacyShield} alt="Privacy Shield" className="w-5 h-5 rounded" />
-            <span className="text-sm text-accent font-medium">Zero-Knowledge Cross-Chain Swaps</span>
+            <span className="text-sm text-white font-medium">Zero-Knowledge Cross-Chain Swaps</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
