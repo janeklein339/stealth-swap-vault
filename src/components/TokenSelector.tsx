@@ -48,14 +48,14 @@ export function TokenSelector({
   );
 
   return (
-    <div className="glass-card rounded-xl p-4 space-y-3">
+    <div className="glass-card rounded-xl p-4 space-y-3 bg-contrast-safe">
       <div className="flex items-center justify-between">
         <Input
           type="text"
           placeholder={isEncrypted ? "••••••" : "0.0"}
           value={amount}
           onChange={(e) => onAmountChange(e.target.value)}
-          className="text-2xl font-bold bg-transparent border-none p-0 h-auto text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
+          className="text-2xl font-bold bg-transparent border-none p-0 h-auto text-contrast-high placeholder:text-muted-foreground focus-visible:ring-0"
         />
         
         <DropdownMenu>
@@ -73,7 +73,7 @@ export function TokenSelector({
             </Button>
           </DropdownMenuTrigger>
           
-          <DropdownMenuContent className="w-80 glass-card border-border/50 p-2">
+          <DropdownMenuContent className="w-80 glass-card border-border/50 p-2 bg-contrast-safe z-50">
             <div className="relative mb-2">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
@@ -95,13 +95,13 @@ export function TokenSelector({
                     <div className="flex items-center gap-3">
                       <span className="text-lg">{token.icon}</span>
                       <div>
-                        <div className="font-medium">{token.symbol}</div>
+                        <div className="font-medium text-contrast-high">{token.symbol}</div>
                         <div className="text-xs text-muted-foreground">{token.name}</div>
                       </div>
                     </div>
                     {token.balance && (
                       <div className="text-right">
-                        <div className="text-sm font-medium">{token.balance}</div>
+                        <div className="text-sm font-medium text-contrast-high">{token.balance}</div>
                         <div className="text-xs text-muted-foreground">Balance</div>
                       </div>
                     )}
@@ -114,8 +114,8 @@ export function TokenSelector({
       </div>
       
       {selected?.balance && (
-        <div className="flex justify-between text-xs text-muted-foreground">
-          <span>Balance: {selected.balance} {selected.symbol}</span>
+        <div className="flex justify-between text-xs">
+          <span className="text-muted-foreground">Balance: <span className="text-contrast-high">{selected.balance} {selected.symbol}</span></span>
           <Button
             variant="ghost"
             size="sm"

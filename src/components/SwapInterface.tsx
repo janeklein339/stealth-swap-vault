@@ -30,6 +30,8 @@ export function SwapInterface() {
   const [toAmount, setToAmount] = useState("");
   const [isEncrypted, setIsEncrypted] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
+  const [isSwapping, setIsSwapping] = useState(false);
+  const [swapStatus, setSwapStatus] = useState<'idle' | 'pending' | 'success' | 'error'>('idle');
 
   const handleSwapDirection = () => {
     setFromChain(toChain);
@@ -38,6 +40,32 @@ export function SwapInterface() {
     setToToken(fromToken);
     setFromAmount(toAmount);
     setToAmount(fromAmount);
+  };
+
+  const handleSwap = async () => {
+    if (!fromAmount || !toAmount || !fromChain || !toChain) return;
+    
+    setIsSwapping(true);
+    setSwapStatus('pending');
+    
+    // Simulate swap process
+    try {
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      setSwapStatus('success');
+      // Reset form after success
+      setTimeout(() => {
+        setFromAmount("");
+        setToAmount("");
+        setSwapStatus('idle');
+        setIsSwapping(false);
+      }, 2000);
+    } catch (error) {
+      setSwapStatus('error');
+      setTimeout(() => {
+        setSwapStatus('idle');
+        setIsSwapping(false);
+      }, 3000);
+    }
   };
 
   return (
@@ -108,18 +136,44 @@ export function SwapInterface() {
 
         {/* Swap Details */}
         {fromAmount && toAmount && (
-          <div className="glass-card rounded-lg p-4 space-y-2 text-sm">
+          <div className="glass-card rounded-lg p-4 space-y-2 text-sm bg-contrast-safe">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Exchange Rate</span>
-              <span>1 {fromToken?.symbol} = 0.998 {toToken?.symbol}</span>
+              <span className="text-contrast-high">1 {fromToken?.symbol} = 0.998 {toToken?.symbol}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Bridge Fee</span>
-              <span className="text-accent">0.1%</span>
+              <span className="text-accent font-medium">0.1%</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Estimated Time</span>
-              <span>~3-5 minutes</span>
+              <span className="text-contrast-high">~3-5 minutes</span>
+            </div>
+          </div>
+        )}
+
+        {/* Swap Status */}
+        {swapStatus === 'pending' && (
+          <div className="glass-card rounded-lg p-4 text-center bg-contrast-safe">
+            <div className="flex items-center justify-center gap-2 text-accent">
+              <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+              <span className="text-contrast-high">Processing swap...</span>
+            </div>
+          </div>
+        )}
+
+        {swapStatus === 'success' && (
+          <div className="glass-card rounded-lg p-4 text-center bg-contrast-safe">
+            <div className="text-green-400 font-medium text-contrast-high">
+              ✅ Swap completed successfully!
+            </div>
+          </div>
+        )}
+
+        {swapStatus === 'error' && (
+          <div className="glass-card rounded-lg p-4 text-center bg-contrast-safe">
+            <div className="text-red-400 font-medium text-contrast-high">
+              ❌ Swap failed. Please try again.
             </div>
           </div>
         )}
@@ -140,9 +194,14 @@ export function SwapInterface() {
             variant="swap"
             size="lg"
             className="w-full"
-            disabled={!fromAmount || !toAmount || !fromChain || !toChain}
+            disabled={!fromAmount || !toAmount || !fromChain || !toChain || isSwapping}
+            onClick={handleSwap}
           >
-            {!fromAmount || !toAmount ? "Enter Amount" : "Swap Privately"}
+            {isSwapping 
+              ? "Swapping..." 
+              : !fromAmount || !toAmount 
+                ? "Enter Amount" 
+                : "Swap Privately"}
           </Button>
         )}
       </Card>
