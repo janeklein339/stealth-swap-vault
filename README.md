@@ -1,107 +1,207 @@
-# Stealth Swap Vault
+# 🛡️ StealthSwap Vault
 
-A privacy-first cross-chain cryptocurrency swap platform that enables confidential transactions with encrypted amounts, preventing MEV exploitation across all major blockchain networks.
+<div align="center">
 
-## Features
+![StealthSwap Logo](public/favicon.svg)
 
-- **Privacy-First Design**: Execute cross-chain swaps with encrypted amounts
-- **MEV Protection**: Prevent front-running and sandwich attacks
-- **Multi-Chain Support**: Seamless swaps across major blockchain networks
-- **FHE Integration**: Fully Homomorphic Encryption for transaction privacy
-- **Real Wallet Integration**: Connect with popular wallet providers
-- **Modern UI**: Built with React, TypeScript, and Tailwind CSS
+**The Ultimate Privacy-First Cross-Chain Swap Protocol**
 
-## Technology Stack
+*Where Privacy Meets DeFi Innovation*
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, Radix UI components
-- **Wallet Integration**: RainbowKit, Wagmi, Viem
-- **Blockchain**: Ethereum, Polygon, Arbitrum, Optimism
-- **Privacy**: FHE (Fully Homomorphic Encryption)
-- **State Management**: TanStack Query
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## Getting Started
+</div>
+
+---
+
+## 🌟 What Makes Us Different?
+
+StealthSwap Vault revolutionizes cross-chain trading by implementing **Fully Homomorphic Encryption (FHE)** to protect your transaction amounts from MEV attacks and front-running. Unlike traditional DEXs, we ensure your trading strategies remain completely private.
+
+### 🔐 Core Privacy Features
+
+- **🛡️ Encrypted Amounts**: Transaction values are encrypted using FHE
+- **🚫 MEV Protection**: Advanced privacy prevents sandwich attacks
+- **🌐 Cross-Chain Privacy**: Seamless swaps across multiple networks
+- **🔒 Zero-Knowledge Proofs**: Verify without revealing sensitive data
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 18+ 
 - npm or yarn
-- Git
+- A Web3 wallet (MetaMask, WalletConnect, etc.)
 
 ### Installation
 
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/janeklein339/stealth-swap-vault.git
 cd stealth-swap-vault
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your configuration:
-```
-NEXT_PUBLIC_CHAIN_ID=11155111
-NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
-NEXT_PUBLIC_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
-NEXT_PUBLIC_RPC_URL=https://1rpc.io/sepolia
-```
-
-4. Start the development server:
-```bash
+# Start development server
 npm run dev
 ```
 
-5. Open [http://localhost:8080](http://localhost:8080) in your browser.
+### Environment Setup
 
-## Building for Production
+Create a `.env` file in the root directory:
 
-```bash
-npm run build
+```env
+# Chain Configuration
+VITE_CHAIN_ID=11155111
+VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+
+# Wallet Connect
+VITE_WALLET_CONNECT_PROJECT_ID=YOUR_PROJECT_ID
+
+# Optional: Infura API Key
+VITE_INFURA_API_KEY=YOUR_INFURA_KEY
 ```
 
-The built files will be in the `dist` directory.
+---
 
-## Smart Contracts
+## 🏗️ Architecture
 
-The project includes FHE-enabled smart contracts for:
-- Cross-chain swap execution
-- Encrypted amount handling
-- Privacy-preserving transaction validation
-- MEV protection mechanisms
+### Frontend Stack
+- **⚛️ React 18** - Modern UI framework
+- **🔷 TypeScript** - Type-safe development
+- **⚡ Vite** - Lightning-fast build tool
+- **🎨 Tailwind CSS** - Utility-first styling
+- **🧩 Radix UI** - Accessible component primitives
 
-## Contributing
+### Wallet Integration
+- **🌈 RainbowKit** - Beautiful wallet connection UI
+- **🔗 Wagmi** - React hooks for Ethereum
+- **⚡ Viem** - TypeScript interface for Ethereum
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+### Smart Contracts
+- **📜 Solidity 0.8.24** - Smart contract language
+- **🔐 FHE Integration** - Privacy-preserving computations
+- **🔨 Hardhat** - Development framework
 
-## License
+---
+
+## 🔧 Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+
+# Smart Contracts
+npm run compile      # Compile contracts
+npm run deploy:sepolia  # Deploy to Sepolia
+npm run test         # Run contract tests
+
+# Code Quality
+npm run lint         # Run ESLint
+```
+
+---
+
+## 🌐 Supported Networks
+
+| Network | Status | Chain ID |
+|---------|--------|----------|
+| Ethereum Sepolia | ✅ Testnet | 11155111 |
+| Polygon | 🚧 Coming Soon | 137 |
+| Arbitrum | 🚧 Coming Soon | 42161 |
+| Optimism | 🚧 Coming Soon | 10 |
+
+---
+
+## 🔐 Security Features
+
+### Privacy Protection
+- **Encrypted Transactions**: All amounts are encrypted using FHE
+- **Secret Hash System**: Secure cross-chain redemption
+- **MEV Resistance**: Advanced privacy prevents exploitation
+
+### Smart Contract Security
+- **Access Controls**: Role-based permissions
+- **Emergency Functions**: Circuit breakers for critical situations
+- **Audit Ready**: Clean, well-documented code
+
+---
+
+## 📚 Documentation
+
+- **[Deployment Guide](VERCEL_DEPLOYMENT.md)** - Deploy to Vercel
+- **[Smart Contract API](contracts/)** - Contract documentation
+- **[Environment Setup](env.example)** - Configuration examples
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our contributing guidelines:
+
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
+3. **Commit** your changes: `git commit -m 'Add amazing feature'`
+4. **Push** to the branch: `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Write comprehensive tests
+- Update documentation
+- Ensure code quality with ESLint
+
+---
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Security
+---
 
-This project implements advanced privacy features using FHE. Please review the security considerations in the documentation before using in production.
+## 🆘 Support
 
-## Support
+- **🐛 Bug Reports**: [GitHub Issues](https://github.com/janeklein339/stealth-swap-vault/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/janeklein339/stealth-swap-vault/discussions)
+- **📧 Contact**: [Email Support](mailto:support@stealthswap.dev)
 
-For support and questions, please open an issue on GitHub or contact the development team.
+---
 
-## Roadmap
+## 🗺️ Roadmap
 
-- [ ] Additional blockchain network support
-- [ ] Advanced privacy features
-- [ ] Mobile application
-- [ ] Governance token integration
-- [ ] Cross-chain bridge optimization
+### Phase 1: Core Features ✅
+- [x] FHE integration
+- [x] Cross-chain swaps
+- [x] Wallet connectivity
+- [x] MEV protection
+
+### Phase 2: Expansion 🚧
+- [ ] Additional networks
+- [ ] Mobile app
+- [ ] Advanced analytics
+- [ ] Governance token
+
+### Phase 3: Enterprise 🔮
+- [ ] Institutional features
+- [ ] API access
+- [ ] White-label solutions
+- [ ] Compliance tools
+
+---
+
+<div align="center">
+
+**Built with ❤️ for the Privacy-First DeFi Future**
+
+[Website](https://stealthswap.dev) • [Documentation](https://docs.stealthswap.dev) • [Twitter](https://twitter.com/stealthswap)
+
+</div>

@@ -7,7 +7,7 @@ async function main() {
   const StealthSwapVault = await ethers.getContractFactory("StealthSwapVault");
 
   // Set deployment parameters
-  const feeCollector = "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6"; // Replace with actual fee collector address
+  const feeCollector = "0x0000000000000000000000000000000000000000"; // Replace with actual fee collector address
   const protocolFee = 30; // 0.3% in basis points
 
   // Deploy the contract

@@ -14,7 +14,7 @@ const Index = () => {
               <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
                 <Shield className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold gradient-primary bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-white">
                 PrivateSwap
               </span>
             </div>
@@ -42,7 +42,7 @@ const Index = () => {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="text-white">
               Swap Anywhere,
             </span>
             <br />
