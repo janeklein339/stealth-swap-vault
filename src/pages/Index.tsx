@@ -1,6 +1,6 @@
 import { SwapInterface } from "@/components/SwapInterface";
 import { WalletConnect } from "@/components/WalletConnect";
-import { Shield, Zap, Globe } from "lucide-react";
+import { ArrowLeftRight, Zap, Globe, Lock } from "lucide-react";
 import privacyShield from "@/assets/privacy-shield.jpg";
 
 const Index = () => {
@@ -11,8 +11,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
-                <Shield className="h-5 w-5 text-primary-foreground" />
+              <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center relative">
+                <ArrowLeftRight className="h-4 w-4 text-white" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full flex items-center justify-center">
+                  <Lock className="h-2 w-2 text-purple-600" />
+                </div>
               </div>
               <span className="text-xl font-bold text-white">
                 PrivateSwap
@@ -57,8 +60,11 @@ const Index = () => {
           {/* Features */}
           <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
             <div className="glass-card rounded-xl p-6 text-center hover:border-primary/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-6 w-6 text-primary-foreground" />
+              <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mx-auto mb-4 relative">
+                <Lock className="h-6 w-6 text-white" />
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center">
+                  <ArrowLeftRight className="h-2 w-2 text-purple-600" />
+                </div>
               </div>
               <h3 className="text-lg font-semibold mb-2">MEV Protected</h3>
               <p className="text-muted-foreground text-sm">
@@ -116,8 +122,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded gradient-primary flex items-center justify-center">
-                <Shield className="h-3 w-3 text-primary-foreground" />
+              <div className="w-6 h-6 rounded gradient-primary flex items-center justify-center relative">
+                <ArrowLeftRight className="h-3 w-3 text-white" />
+                <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-white rounded-full flex items-center justify-center">
+                  <Lock className="h-1 w-1 text-purple-600" />
+                </div>
               </div>
               <span className="text-sm text-muted-foreground">
                 © 2024 PrivateSwap. Privacy-first DeFi.
