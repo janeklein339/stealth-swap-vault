@@ -1,4 +1,5 @@
 import { SwapInterface } from "@/components/SwapInterface";
+import { WalletConnect } from "@/components/WalletConnect";
 import { Shield, Zap, Globe } from "lucide-react";
 import privacyShield from "@/assets/privacy-shield.jpg";
 
@@ -84,6 +85,21 @@ const Index = () => {
                 Complete swaps in 3-5 minutes with optimized routing
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wallet Connection */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Connect Your Wallet</h2>
+              <p className="text-muted-foreground">
+                Connect your wallet to start using Stealth Swap Vault for private cross-chain swaps
+              </p>
+            </div>
+            <WalletConnect />
           </div>
         </div>
       </section>

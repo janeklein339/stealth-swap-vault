@@ -1,73 +1,107 @@
-# Welcome to your Lovable project
+# Stealth Swap Vault
 
-## Project info
+A privacy-first cross-chain cryptocurrency swap platform that enables confidential transactions with encrypted amounts, preventing MEV exploitation across all major blockchain networks.
 
-**URL**: https://lovable.dev/projects/b0f0e360-7635-4151-ac86-ab98d0adc78d
+## Features
 
-## How can I edit this code?
+- **Privacy-First Design**: Execute cross-chain swaps with encrypted amounts
+- **MEV Protection**: Prevent front-running and sandwich attacks
+- **Multi-Chain Support**: Seamless swaps across major blockchain networks
+- **FHE Integration**: Fully Homomorphic Encryption for transaction privacy
+- **Real Wallet Integration**: Connect with popular wallet providers
+- **Modern UI**: Built with React, TypeScript, and Tailwind CSS
 
-There are several ways of editing your application.
+## Technology Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS, Radix UI components
+- **Wallet Integration**: RainbowKit, Wagmi, Viem
+- **Blockchain**: Ethereum, Polygon, Arbitrum, Optimism
+- **Privacy**: FHE (Fully Homomorphic Encryption)
+- **State Management**: TanStack Query
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b0f0e360-7635-4151-ac86-ab98d0adc78d) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ 
+- npm or yarn
+- Git
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone https://github.com/janeklein339/stealth-swap-vault.git
+cd stealth-swap-vault
+```
 
-Follow these steps:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Edit `.env` with your configuration:
+```
+NEXT_PUBLIC_CHAIN_ID=11155111
+NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
+NEXT_PUBLIC_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
+NEXT_PUBLIC_RPC_URL=https://1rpc.io/sepolia
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+5. Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Building for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The built files will be in the `dist` directory.
 
-## What technologies are used for this project?
+## Smart Contracts
 
-This project is built with:
+The project includes FHE-enabled smart contracts for:
+- Cross-chain swap execution
+- Encrypted amount handling
+- Privacy-preserving transaction validation
+- MEV protection mechanisms
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contributing
 
-## How can I deploy this project?
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/b0f0e360-7635-4151-ac86-ab98d0adc78d) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Yes, you can!
+## Security
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project implements advanced privacy features using FHE. Please review the security considerations in the documentation before using in production.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Support
+
+For support and questions, please open an issue on GitHub or contact the development team.
+
+## Roadmap
+
+- [ ] Additional blockchain network support
+- [ ] Advanced privacy features
+- [ ] Mobile application
+- [ ] Governance token integration
+- [ ] Cross-chain bridge optimization
